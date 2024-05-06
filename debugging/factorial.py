@@ -5,19 +5,9 @@ def factorial(n):
     result = 1
     while n > 1:
         result *= n
-        n = n - 1
+        n -= 1  # Décrémentation de n à chaque itération
     return result
 
-if len(sys.argv) != 2:
-    print("Usage: python script.py <integer>")
-    sys.exit(1)
-
-try:
-    number = int(sys.argv[1])
-except ValueError:
-    print("Please provide an integer.")
-    sys.exit(1)
-
-f = factorial(number)
+f = factorial(int(sys.argv[1]))
 print(f)
 
